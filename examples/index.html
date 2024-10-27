@@ -6,27 +6,12 @@
     <title>WebSocket Test</title>
   </head>
   <body>
-    <div>WebSocket test</div>
-    <textarea id="ws-message-input"></textarea>
-    <button onclick="sendMessage()">Send</button>
-    <script>
-      const wsMessageInputElement = document.getElementById("ws-message-input");
-
-      const exampleSocket = new WebSocket("ws://localhost:8090/ws");
-
-      exampleSocket.onopen = (event) => {
-        console.log("WebSocket connection started");
-      };
-
-      function sendMessage() {
-        const message = wsMessageInputElement.value;
-        if (!message) {
-          return;
-        }
-
-        console.log("Sending the message: ", message);
-        exampleSocket.send(message);
-      }
-    </script>
+    <br />
+    <div>WebSocket test <button id="ws-connect-button">Connect</button></div>
+    <br />
+    <textarea id="ws-message-textarea" disabled></textarea>
+    <br />
+    <button id="ws-send-message-button" disabled>Send</button>
+    <script src="./index.js"></script>
   </body>
 </html>
