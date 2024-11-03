@@ -16,7 +16,7 @@ func TestGetWebSocketAcceptKey(t *testing.T) {
 	for _, test := range tests {
 		testName := fmt.Sprintf("for the initial key '%s' it should return the accept key '%s'", test.initialKey, test.expectedAcceptKey)
 		t.Run(testName, func(t *testing.T) {
-			acceptKey, err := getWebSocketAcceptKey(test.initialKey)
+			acceptKey, err := GetWebSocketAcceptKey(test.initialKey)
 			if err != nil {
 				t.Errorf("An error occurred while trying to get the accept key")
 			}
